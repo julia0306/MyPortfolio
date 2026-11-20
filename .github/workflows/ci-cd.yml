@@ -74,7 +74,7 @@ jobs:
       # Configurer GitHub Pages
       - name: Configure GitHub Pages
         if: github.event_name == 'push'
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
       # Préparer les fichiers pour le déploiement
       - name: Upload Pages artifact
