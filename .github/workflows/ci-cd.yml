@@ -67,9 +67,13 @@ jobs:
             --base-href /MyPortfolio/ \
             --output-path dist/pages
 
-      # Vérifier que le build a généré index.html
-      - name: Verify build output
-        run: test -f dist/pages/browser/index.html
+      # Vérifier que les 4 pages ont été pré-générées
+      - name: Verify prerendered pages
+        run: |
+          test -f dist/pages/browser/index.html
+          test -f dist/pages/browser/projects/index.html
+          test -f dist/pages/browser/about/index.html
+          test -f dist/pages/browser/contact/index.html
 
       # Configurer GitHub Pages
       - name: Configure GitHub Pages
